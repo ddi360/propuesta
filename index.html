@@ -291,13 +291,29 @@
           var bs = bootstrap.Collapse.getOrCreateInstance(el);
           bs.show();
         });
+        document
+          .querySelectorAll(".toggle-btn")
+          .forEach((btn) => (btn.textContent = "Ocultar detalle"));
       }
       function collapseAll() {
         document.querySelectorAll(".collapse").forEach((el) => {
           var bs = bootstrap.Collapse.getOrCreateInstance(el);
           bs.hide();
         });
+        document
+          .querySelectorAll(".toggle-btn")
+          .forEach((btn) => (btn.textContent = "Ver detalle"));
       }
+
+      document.addEventListener("shown.bs.collapse", (e) => {
+        const btn = document.querySelector(`[href="#${e.target.id}"]`);
+        if (btn) btn.textContent = "Ocultar detalle";
+      });
+
+      document.addEventListener("hidden.bs.collapse", (e) => {
+        const btn = document.querySelector(`[href="#${e.target.id}"]`);
+        if (btn) btn.textContent = "Ver detalle";
+      });
     </script>
   </body>
 </html>
