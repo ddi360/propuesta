@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Informe de Falencias y Propuestas</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f5f7fb; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    header { background: linear-gradient(90deg,#0d6efd 0%, #3b82f6 100%); color: #fff; padding: 28px 0; }
+    header h1 { margin: 0; font-weight: 600; font-size: 1.6rem; }
+    .card-title { font-size: 1rem; font-weight: 600; }
+    .meta { font-size: .875rem; color: #6b7280; }
+    .badge-area { background: rgba(13,110,253,0.15); color:#084298; font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="text-center">
+    <div class="container">
+      <h1>Informe de Falencias, Causas e Implementación de Soluciones</h1>
+      <p class="text-white-50 small mt-1">Versión responsive — contenido presentado en tarjetas para mejor lectura móvil</p>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div>
+        <h2 class="h5 mb-0">Resumen de áreas</h2>
+        <small class="text-muted">Desplázate para ver todas las tarjetas. Haz clic en "Ver detalle" para expandir.</small>
+      </div>
+      <div>
+        <button class="btn btn-outline-primary btn-sm" onclick="expandAll()">Expandir todo</button>
+        <button class="btn btn-outline-secondary btn-sm" onclick="collapseAll()">Colapsar todo</button>
+      </div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col-12 d-flex justify-content-center">
+        <div class="card h-100 shadow-sm w-100" style="max-width: 850px;">
+          <div class="card-body d-flex flex-column text-center">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="badge badge-area px-2 py-1 rounded">Gestión de soporte al usuario</span>
+              <small class="meta">Área / Tema</small>
+            </div>
+            <h5 class="card-title">Falta de proceso estructurado para atención a usuarios</h5>
+            <p class="mb-2 text-truncate" id="short-1">La atención a los usuarios internos no cuenta con un proceso estructurado ni recursos dedicados para resolver incidencias de manera oportuna.</p>
+            <div class="mt-auto">
+              <a class="btn btn-sm btn-primary" data-bs-toggle="collapse" href="#collapse-1" role="button" aria-expanded="false" aria-controls="collapse-1">Ver detalle</a>
+            </div>
+            <div class="collapse mt-3 text-start" id="collapse-1">
+              <hr>
+              <p><strong>Causa principal:</strong> Falta de personal asignado exclusivamente al soporte técnico y carencia de protocolos para la atención de consultas.</p>
+              <p><strong>Impacto:</strong> Interrupciones en el trabajo de los usuarios y menor eficiencia del equipo de desarrollo.</p>
+              <p><strong>Propuesta / Solución:</strong> Destinar un puesto del área de Sistemas al soporte; desarrollar chatbot interno para incidencias recurrentes; establecer documentación práctica y user stories en Product Backlog.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-12 d-flex justify-content-center">
+        <div class="card h-100 shadow-sm w-100" style="max-width: 850px;">
+          <div class="card-body d-flex flex-column text-center">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="badge badge-area px-2 py-1 rounded">Desarrollo de Software / Proceso</span>
+              <small class="meta">Área / Tema</small>
+            </div>
+            <h5 class="card-title">Falta de documentación en procesos de desarrollo</h5>
+            <p class="mb-2 text-truncate" id="short-2">No existe un estándar definido para documentar y los desarrolladores priorizan la entrega sobre la documentación.</p>
+            <div class="mt-auto">
+              <a class="btn btn-sm btn-primary" data-bs-toggle="collapse" href="#collapse-2" role="button" aria-expanded="false" aria-controls="collapse-2">Ver detalle</a>
+            </div>
+            <div class="collapse mt-3 text-start" id="collapse-2">
+              <hr>
+              <p><strong>Causa principal:</strong> Ausencia de estándar y cultura de documentación.</p>
+              <p><strong>Impacto:</strong> Dificultad para mantener/actualizar software, dependencia del conocimiento individual.</p>
+              <p><strong>Propuesta / Solución:</strong> Usar Sprint Backlog, tableros Kanban/Jira, Daily Scrum, registro de decisiones técnicas y documentación ligera revisada en Sprint Review.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-12 d-flex justify-content-center">
+        <div class="card h-100 shadow-sm w-100" style="max-width: 850px;">
+          <div class="card-body d-flex flex-column text-center">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="badge badge-area px-2 py-1 rounded">Desarrollo de Software / Patrones de Diseño</span>
+              <small class="meta">Área / Tema</small>
+            </div>
+            <h5 class="card-title">Falta de aplicación de patrones y Clean Code</h5>
+            <p class="mb-2 text-truncate" id="short-3">Se desconocen o no se aplican estándares de diseño y buenas prácticas de codificación.</p>
+            <div class="mt-auto">
+              <a class="btn btn-sm btn-primary" data-bs-toggle="collapse" href="#collapse-3" role="button" aria-expanded="false" aria-controls="collapse-3">Ver detalle</a>
+            </div>
+            <div class="collapse mt-3 text-start" id="collapse-3">
+              <hr>
+              <p><strong>Causa principal:</strong> Falta de estándares y formación en principios de diseño y buen código.</p>
+              <p><strong>Impacto:</strong> Código difícil de mantener y escalar, mayor probabilidad de errores.</p>
+              <p><strong>Propuesta / Solución:</strong> Implementar estándares de codificación, adopción de Clean Code, revisiones periódicas y herramientas de análisis estático como SonarQube.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-12 d-flex justify-content-center">
+        <div class="card h-100 shadow-sm w-100" style="max-width: 850px;">
+          <div class="card-body d-flex flex-column text-center">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="badge badge-area px-2 py-1 rounded">Desarrollo de Software / Unit Tests</span>
+              <small class="meta">Área / Tema</small>
+            </div>
+            <h5 class="card-title">Falta de enfoque integral en pruebas y despliegue</h5>
+            <p class="mb-2 text-truncate" id="short-4">Los procesos se centran solo en desarrollo de funcionalidades, sin estrategias de despliegue ni soporte post-lanzamiento.</p>
+            <div class="mt-auto">
+              <a class="btn btn-sm btn-primary" data-bs-toggle="collapse" href="#collapse-4" role="button" aria-expanded="false" aria-controls="collapse-4">Ver detalle</a>
+            </div>
+            <div class="collapse mt-3 text-start" id="collapse-4">
+              <hr>
+              <p><strong>Causa principal:</strong> Falta de integración de validaciones finales y planes de despliegue.</p>
+              <p><strong>Impacto:</strong> Mayor probabilidad de errores en producción y retrabajos costosos.</p>
+              <p><strong>Propuesta / Solución:</strong> Implementar pruebas de aceptación, rendimiento, pipelines CI/CD, plan de mantenimiento post-lanzamiento y documentación mínima de procesos de despliegue.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Puedes duplicar más tarjetas aquí si hay más filas -->
+
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function expandAll(){
+      document.querySelectorAll('.collapse').forEach(el=>{var bs = bootstrap.Collapse.getOrCreateInstance(el); bs.show();});
+    }
+    function collapseAll(){
+      document.querySelectorAll('.collapse').forEach(el=>{var bs = bootstrap.Collapse.getOrCreateInstance(el); bs.hide();});
+    }
+  </script>
+</body>
+</html>
